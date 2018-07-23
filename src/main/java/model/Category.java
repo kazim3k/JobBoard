@@ -15,4 +15,23 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private Set<Ad> ads;
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Ad> getAds() {
+        return ads;
+    }
+
+    public void setAds(Set<Ad> ads) {
+        this.ads = ads;
+    }
 }

@@ -20,10 +20,6 @@ public class Ad {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getHeader() {
         return Header;
     }
@@ -38,5 +34,13 @@ public class Ad {
 
     public void setContent(StringBuilder content) {
         this.content = content;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
