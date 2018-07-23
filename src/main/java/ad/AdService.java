@@ -1,4 +1,4 @@
-package service;
+package ad;
 
 public interface AdService {
 }

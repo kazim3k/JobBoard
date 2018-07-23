@@ -1,4 +1,4 @@
-package service.AdServiceImpl;
+package ad;
 
 import org.springframework.stereotype.Service;
 

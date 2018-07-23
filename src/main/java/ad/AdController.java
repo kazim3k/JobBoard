@@ -1,4 +1,4 @@
-package controller;
+package ad;
 
 
 public class AdController {

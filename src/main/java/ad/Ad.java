@@ -1,4 +1,6 @@
-package model;
+package ad;
+
+import category.Category;
 
 import javax.persistence.*;
 

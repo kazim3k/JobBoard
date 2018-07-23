@@ -1,4 +1,6 @@
-package model;
+package category;
+
+import ad.Ad;
 
 import javax.persistence.*;
 import java.util.Set;

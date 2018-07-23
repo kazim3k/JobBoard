@@ -1,6 +1,6 @@
-package repository;
+package ad;
 
-import model.Ad;
+import ad.Ad;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

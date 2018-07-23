@@ -1,6 +1,6 @@
-package repository;
+package category;
 
-import model.Category;
+import category.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
