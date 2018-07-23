@@ -1,9 +1,6 @@
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Ad {
@@ -15,6 +12,9 @@ public class Ad {
     private String Header;
 
     private StringBuilder content;
+
+    @ManyToOne
+    private Category category;
 
     public Long getId() {
         return id;
