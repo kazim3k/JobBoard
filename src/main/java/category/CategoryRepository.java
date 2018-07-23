@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Set;
 
 @Repository
-public interface CategoryRepository extends CrudRepository<Category,String> {
+public interface CategoryRepository extends CrudRepository<Category,Long> {
 
     Set<Category> findAllBy();
 }
