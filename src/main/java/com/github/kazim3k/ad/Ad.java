@@ -1,6 +1,6 @@
-package ad;
+package com.github.kazim3k.ad;
 
-import category.Category;
+import com.github.kazim3k.category.Category;
 
 import javax.persistence.*;
 

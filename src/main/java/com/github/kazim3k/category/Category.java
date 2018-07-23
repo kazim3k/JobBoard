@@ -1,7 +1,6 @@
-package category;
+package com.github.kazim3k.category;
 
-import ad.Ad;
-
+import com.github.kazim3k.ad.Ad;
 import javax.persistence.*;
 import java.util.Set;
 

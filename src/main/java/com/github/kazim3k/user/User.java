@@ -1,4 +1,4 @@
-package user;
+package com.github.kazim3k.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

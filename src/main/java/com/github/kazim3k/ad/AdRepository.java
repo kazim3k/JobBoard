@@ -1,7 +1,7 @@
-package ad;
+package com.github.kazim3k.ad;
 
-import ad.Ad;
-import category.Category;
+import com.github.kazim3k.ad.Ad;
+import com.github.kazim3k.category.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +12,7 @@ public interface AdRepository extends CrudRepository<Ad, Long> {
 
 
     Set<Ad> findAllBy();
-    Set<Ad> findAllByCategory(Category category);
+    Set<Ad> findAllByCategoryId(Long categoryId);
 
 
 }

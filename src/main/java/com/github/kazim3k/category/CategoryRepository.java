@@ -1,6 +1,5 @@
-package category;
+package com.github.kazim3k.category;
 
-import category.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

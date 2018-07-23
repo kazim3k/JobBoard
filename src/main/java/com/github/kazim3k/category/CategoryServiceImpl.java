@@ -1,4 +1,4 @@
-package category;
+package com.github.kazim3k.category;
 
 import org.springframework.stereotype.Service;
 
