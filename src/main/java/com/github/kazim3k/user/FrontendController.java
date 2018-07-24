@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/views")
 public class FrontendController {
 
     @RequestMapping("/admin")
@@ -20,8 +21,11 @@ public class FrontendController {
         return new ModelAndView("/user.html");
     }
 
-//    @RequestMapping("/login")
-//    public ModelAndView login(Model model) {
-//        return new ModelAndView("/login.html");
-//    }
+    @RequestMapping("/signup")
+    public String signUp(Model model){
+
+        model.addAttribute("dto", new CreateUserDto());
+        return "SignUpForm";
+    }
+
 }
