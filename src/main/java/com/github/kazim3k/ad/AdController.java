@@ -23,12 +23,12 @@ public class AdController {
     }
 
     @GetMapping
-    Set<Ad> findAll(){
+    Set<AdDto> findAll(){
         return adService.findAll();
     }
 
-    @GetMapping("/{com.github.kazim3k.category}")
-    Set<Ad> findAllByCategory(@PathVariable Long categoryId){
+    @GetMapping("/{category}")
+    Set<AdDto> findAllByCategory(@PathVariable Long categoryId){
         return adService.findAllByCategoryId(categoryId);
     }
 }

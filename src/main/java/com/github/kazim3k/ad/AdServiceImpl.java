@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class AdServiceImpl implements AdService {
@@ -20,13 +21,14 @@ public class AdServiceImpl implements AdService {
     }
 
     @Override
-    public Set<Ad> findAll() {
-        return adRepository.findAllBy();
+    public Set<AdDto> findAll() {
+        return adRepository.findAllBy().stream().map(AdDto::new).collect(Collectors.toSet());
     }
 
     @Override
-    public Set<Ad> findAllByCategoryId(Long categoryId) {
-        return adRepository.findAllByCategoryId(categoryId);
+    public Set<AdDto> findAllByCategoryId(Long categoryId) {
+
+        return adRepository.findAllByCategoryId(categoryId).stream().map(AdDto::new).collect(Collectors.toSet());
     }
 
     @Override

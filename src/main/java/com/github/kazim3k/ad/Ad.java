@@ -11,7 +11,7 @@ public class Ad {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String Header;
+    private String header;
 
     private StringBuilder content;
 
@@ -23,11 +23,11 @@ public class Ad {
     }
 
     public String getHeader() {
-        return Header;
+        return header;
     }
 
     public void setHeader(String header) {
-        Header = header;
+        this.header = header;
     }
 
     public StringBuilder getContent() {
