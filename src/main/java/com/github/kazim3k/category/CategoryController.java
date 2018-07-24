@@ -18,7 +18,7 @@ public class CategoryController {
     }
 
     @GetMapping
-    public Set<Category> findAllBy() {
+    public Set<CategoryDto> findAllBy() {
         return categoryService.findAll();
     }
 

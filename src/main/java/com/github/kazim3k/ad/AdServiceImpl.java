@@ -1,6 +1,5 @@
 package com.github.kazim3k.ad;
 
-import com.github.kazim3k.category.Category;
 import com.github.kazim3k.category.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,11 +27,13 @@ public class AdServiceImpl implements AdService {
     @Override
     public Set<AdDto> findAllByCategoryId(Long categoryId) {
 
-        return adRepository.findAllByCategoryId(categoryId).stream().map(AdDto::new).collect(Collectors.toSet());
+        return adRepository.findAllByCategoryId(categoryId).stream()
+                .map(AdDto::new)
+                .collect(Collectors.toSet());
     }
 
     @Override
-    public void create(String header, StringBuilder content, Long categoryId) {
+    public void create(String header, String content, Long categoryId) {
         Ad ad = new Ad();
         ad.setCategory(categoryRepository.findOne(categoryId));
         ad.setHeader(header);

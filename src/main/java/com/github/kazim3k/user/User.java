@@ -1,11 +1,9 @@
 package com.github.kazim3k.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -14,6 +12,7 @@ public class User {
 
     private String login;
     private String password;
+    @Column(unique = true)
     private String email;
 
     public Long getId() {

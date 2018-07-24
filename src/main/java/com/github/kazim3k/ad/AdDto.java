@@ -1,15 +1,13 @@
 package com.github.kazim3k.ad;
 
-import com.github.kazim3k.category.Category;
-
 public class AdDto {
 
     private Long id;
     private String header;
-    private StringBuilder content;
+    private String content;
     private String categoryName;
 
-    public AdDto(Long id, String header, StringBuilder content, String categoryName) {
+    public AdDto(Long id, String header, String content, String categoryName) {
         this.id = id;
         this.header = header;
         this.content = content;
@@ -31,7 +29,7 @@ public class AdDto {
         return header;
     }
 
-    public StringBuilder getContent() {
+    public String getContent() {
         return content;
     }
 

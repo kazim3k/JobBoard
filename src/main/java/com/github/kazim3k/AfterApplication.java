@@ -4,6 +4,8 @@ import com.github.kazim3k.ad.Ad;
 import com.github.kazim3k.ad.AdRepository;
 import com.github.kazim3k.category.Category;
 import com.github.kazim3k.category.CategoryRepository;
+import com.github.kazim3k.user.User;
+import com.github.kazim3k.user.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +14,12 @@ public class AfterApplication implements CommandLineRunner {
 
     private AdRepository adRepository;
     private CategoryRepository categoryRepository;
+    private UserRepository userRepository;
 
-    public AfterApplication(AdRepository adRepository, CategoryRepository categoryRepository) {
+    public AfterApplication(AdRepository adRepository, CategoryRepository categoryRepository, UserRepository userRepository) {
         this.adRepository = adRepository;
         this.categoryRepository = categoryRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -25,19 +29,13 @@ public class AfterApplication implements CommandLineRunner {
             Category categoryIT = createCategory("IT");
             Category categorymMrketing = createCategory("Makreting");
             Category categoryGastronomy = createCategory("Gastronomy");
-            StringBuilder sb = new StringBuilder();
-            sb.append("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi " +
-                    "ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
-                    "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur " +
-                    "sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
-                    "mollit anim id est laborum.");
-            Ad ad = createAd("JAVA JUNIOR DEVELOPER",sb,categoryIT);
+            String content = "Lorem ipsum dolor sit amet, consectetur";
+            Ad ad = createAd("JAVA JUNIOR DEVELOPER",content,categoryIT);
+            User user = createUser("michal.kuzma1994@gmail.com","kazim3k","123");
         }
     }
 
-    private Ad createAd(String header, StringBuilder content, Category category) {
+    private Ad createAd(String header, String content, Category category) {
         Ad ad = new Ad();
         ad.setHeader(header);
         ad.setContent(content);
@@ -49,6 +47,14 @@ public class AfterApplication implements CommandLineRunner {
         Category category = new Category();
         category.setName(name);
         return categoryRepository.save(category);
+    }
+
+    private User createUser(String email, String login, String password) {
+        User user = new User();
+        user.setEmail(email);
+        user.setLogin(login);
+        user.setPassword(password);
+        return userRepository.save(user);
     }
 
 }

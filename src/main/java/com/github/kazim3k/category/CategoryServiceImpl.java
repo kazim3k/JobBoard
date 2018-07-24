@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService{
@@ -16,8 +17,9 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public Set<Category> findAll() {
-        return categoryRepository.findAllBy();
+    public Set<CategoryDto> findAll() {
+        return categoryRepository.findAllBy().stream()
+                .map(CategoryDto::new).collect(Collectors.toSet());
     }
 
     @Override

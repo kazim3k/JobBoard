@@ -18,7 +18,7 @@ public class AdController {
     }
 
     @PostMapping
-    void create(@RequestParam Long categoryId, @RequestParam String header, @RequestParam StringBuilder content) {
+    void create(@RequestParam Long categoryId, @RequestParam String header, @RequestParam String content) {
         adService.create(header, content, categoryId);
     }
 
@@ -27,7 +27,7 @@ public class AdController {
         return adService.findAll();
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/{categoryId}")
     Set<AdDto> findAllByCategory(@PathVariable Long categoryId){
         return adService.findAllByCategoryId(categoryId);
     }

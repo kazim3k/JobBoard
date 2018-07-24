@@ -1,22 +1,22 @@
 package com.github.kazim3k.ad;
 
-import com.github.kazim3k.category.Category;
+public class AdNoCategoryDto {
 
-import javax.persistence.*;
-
-@Entity
-public class Ad {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String header;
-
     private String content;
 
-    @ManyToOne
-    private Category category;
+    public AdNoCategoryDto(Long id, String header, String content) {
+        this.id = id;
+        this.header = header;
+        this.content = content;
+    }
+
+    public AdNoCategoryDto(Ad ad) {
+        this.id = ad.getId();
+        this.header = ad.getHeader();
+        this.content = ad.getContent();
+    }
 
     public Long getId() {
         return id;
@@ -36,13 +36,5 @@ public class Ad {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 }
