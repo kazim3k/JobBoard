@@ -23,6 +23,9 @@
                 <li th:classappend="${module == 'tasks' ? 'active' : ''}">
                     <a href="#" th:href="@{/task}">Kategoria</a>
                 </li>
+                <li th:classappend="${module == 'tasks' ? 'active' : ''}">
+                    <a href="/views/user" th:href="@{/task}">Profile</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li th:if="${#authorization.expression('!isAuthenticated()')}">

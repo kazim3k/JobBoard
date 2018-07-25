@@ -9,4 +9,5 @@ import java.util.Set;
 public interface CategoryRepository extends CrudRepository<Category,Long> {
 
     Set<Category> findAllBy();
+    Category findOneByName(String name);
 }

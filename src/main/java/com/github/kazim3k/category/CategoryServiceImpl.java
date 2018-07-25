@@ -1,5 +1,6 @@
 package com.github.kazim3k.category;
 
+import com.github.kazim3k.dto.CategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,10 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public void create(Category category) {
         categoryRepository.save(category);
+    }
+
+    @Override
+    public Category findOneByName(String name) {
+        return categoryRepository.findOneByName(name);
     }
 }

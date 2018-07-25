@@ -1,4 +1,6 @@
-package com.github.kazim3k.ad;
+package com.github.kazim3k.dto;
+
+import com.github.kazim3k.ad.Ad;
 
 public class AdNoCategoryDto {
 

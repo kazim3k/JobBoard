@@ -1,4 +1,4 @@
-package com.github.kazim3k.user;
+package com.github.kazim3k.dto;
 
 import org.hibernate.validator.constraints.Email;
 

@@ -1,4 +1,6 @@
-package com.github.kazim3k.ad;
+package com.github.kazim3k.dto;
+
+import com.github.kazim3k.ad.Ad;
 
 public class AdDto {
 
@@ -6,12 +8,14 @@ public class AdDto {
     private String header;
     private String content;
     private String categoryName;
+    private String userEmail;
 
-    public AdDto(Long id, String header, String content, String categoryName) {
+    public AdDto(Long id, String header, String content, String categoryName,String userEmail) {
         this.id = id;
         this.header = header;
         this.content = content;
         this.categoryName = categoryName;
+        this.userEmail = userEmail;
     }
 
     public AdDto (Ad ad) {
@@ -19,6 +23,7 @@ public class AdDto {
         this.header = ad.getHeader();
         this.content = ad.getContent();
         this.categoryName = ad.getCategory().getName();
+        this.userEmail = ad.getUser().getEmail();
     }
 
     public Long getId() {
@@ -35,5 +40,13 @@ public class AdDto {
 
     public String getCategoryName() {
         return categoryName;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }

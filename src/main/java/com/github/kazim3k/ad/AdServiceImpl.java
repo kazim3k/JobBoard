@@ -1,7 +1,10 @@
 package com.github.kazim3k.ad;
 
 import com.github.kazim3k.category.CategoryRepository;
+import com.github.kazim3k.dto.AdDto;
+import com.github.kazim3k.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,11 +15,13 @@ public class AdServiceImpl implements AdService {
 
     private AdRepository adRepository;
     private CategoryRepository categoryRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    public AdServiceImpl(AdRepository adRepository, CategoryRepository categoryRepository) {
+    public AdServiceImpl(AdRepository adRepository, CategoryRepository categoryRepository, UserRepository userRepository, UserRepository userRepository1) {
         this.adRepository = adRepository;
         this.categoryRepository = categoryRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -34,11 +39,12 @@ public class AdServiceImpl implements AdService {
 
     @Override
     public void create(String header, String content, Long categoryId) {
+        String login = SecurityContextHolder.getContext().getAuthentication().getName();
         Ad ad = new Ad();
         ad.setCategory(categoryRepository.findOne(categoryId));
         ad.setHeader(header);
         ad.setContent(content);
+        ad.setUser(userRepository.findOneByLogin(login));
         adRepository.save(ad);
-
     }
 }

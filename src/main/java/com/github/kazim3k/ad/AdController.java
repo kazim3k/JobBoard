@@ -1,5 +1,8 @@
 package com.github.kazim3k.ad;
 
+import com.github.kazim3k.category.CategoryRepository;
+import com.github.kazim3k.dto.AdDto;
+import com.github.kazim3k.dto.PostAdDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,15 +14,18 @@ import java.util.Set;
 public class AdController {
 
     private AdService adService;
+    private CategoryRepository categoryRepository;
 
     @Autowired
-    public AdController(AdService adService) {
+    public AdController(AdService adService, CategoryRepository categoryRepository) {
         this.adService = adService;
+        this.categoryRepository = categoryRepository;
     }
 
     @PostMapping
-    void create(@RequestParam Long categoryId, @RequestParam String header, @RequestParam String content) {
-        adService.create(header, content, categoryId);
+    void create( PostAdDto postAdDto) {
+        adService.create(postAdDto.getHeader(), postAdDto.getContent(),
+                categoryRepository.findOneByName(postAdDto.getCategoryName()).getId() );
     }
 
     @GetMapping
@@ -31,5 +37,7 @@ public class AdController {
     Set<AdDto> findAllByCategory(@PathVariable Long categoryId){
         return adService.findAllByCategoryId(categoryId);
     }
+
+
 }
 

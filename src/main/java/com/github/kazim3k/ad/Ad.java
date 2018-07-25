@@ -1,6 +1,7 @@
 package com.github.kazim3k.ad;
 
 import com.github.kazim3k.category.Category;
+import com.github.kazim3k.user.User;
 
 import javax.persistence.*;
 
@@ -17,6 +18,9 @@ public class Ad {
 
     @ManyToOne
     private Category category;
+
+    @ManyToOne
+    private User user;
 
     public Long getId() {
         return id;
@@ -44,5 +48,13 @@ public class Ad {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

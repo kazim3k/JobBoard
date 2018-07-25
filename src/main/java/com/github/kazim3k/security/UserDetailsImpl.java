@@ -1,4 +1,4 @@
-package com.github.kazim3k.user;
+package com.github.kazim3k.security;
 
 
 import org.springframework.security.core.GrantedAuthority;

@@ -1,6 +1,9 @@
 package com.github.kazim3k.user;
 
+import com.github.kazim3k.ad.Ad;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -14,6 +17,8 @@ public class User {
     private String password;
     @Column(unique = true)
     private String email;
+    @OneToMany(mappedBy = "user")
+    private Set<Ad> ads;
 
     public Long getId() {
         return id;
@@ -41,5 +46,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Ad> getAds() {
+        return ads;
+    }
+
+    public void setAds(Set<Ad> ads) {
+        this.ads = ads;
     }
 }

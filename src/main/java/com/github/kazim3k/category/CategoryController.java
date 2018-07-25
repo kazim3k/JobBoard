@@ -1,6 +1,7 @@
 package com.github.kazim3k.category;
 
 
+import com.github.kazim3k.dto.CategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,11 @@ public class CategoryController {
     @GetMapping
     public Set<CategoryDto> findAllBy() {
         return categoryService.findAll();
+    }
+
+    @GetMapping("/{name}")
+    public Category findOneByName(@PathVariable String name) {
+        return categoryService.findOneByName(name);
     }
 
     @PostMapping
