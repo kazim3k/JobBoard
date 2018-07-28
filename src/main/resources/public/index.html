@@ -18,27 +18,32 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li th:classappend="${module == 'home' ? 'active' : ''}">
-                    <a href="#" th:href="@{/}">Ogłoszenia</a>
+                    <a href="#" th:href="@{/}">Advertisments</a>
                 </li>
                 <li th:classappend="${module == 'tasks' ? 'active' : ''}">
-                    <a href="#" th:href="@{/task}">Kategoria</a>
+                    <a href="#" th:href="@{/task}">Category</a>
                 </li>
                 <li th:classappend="${module == 'tasks' ? 'active' : ''}">
-                    <a href="/views/user" th:href="@{/task}">Profile</a>
+                    <a href="/user" th:href="@{/task}">Profile</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li th:if="${#authorization.expression('!isAuthenticated()')}">
-                    <a href="/login.html" th:href="@{/signin}">
+                    <a href="/login" th:href="@{/signin}">
                         <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;Sign in
                     </a>
                 </li>
                 <li th:if="${#authorization.expression('isAuthenticated()')}">
-                    <a href="/views/signup" th:href="@{#}" onclick="$('#form').submit();">
+                    <a href="/signup" th:href="@{#}" onclick="$('#form').submit();">
                         <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Sign up
                     </a>
-                    <!--<form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>-->
                 </li>
+                <li th:if="${#authorization.expression('isAuthenticated()')}">
+                    <a href="/logout" th:href="@{#}" onclick="$('#form').submit();">
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Logout
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

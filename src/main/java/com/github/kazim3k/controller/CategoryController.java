@@ -1,7 +1,9 @@
-package com.github.kazim3k.category;
+package com.github.kazim3k.controller;
 
 
+import com.github.kazim3k.service.CategoryService;
 import com.github.kazim3k.dto.CategoryDto;
+import com.github.kazim3k.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

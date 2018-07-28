@@ -1,5 +1,6 @@
-package com.github.kazim3k.ad;
+package com.github.kazim3k.repository;
 
+import com.github.kazim3k.entity.Ad;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

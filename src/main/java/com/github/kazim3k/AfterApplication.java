@@ -1,11 +1,11 @@
 package com.github.kazim3k;
 
-import com.github.kazim3k.ad.Ad;
-import com.github.kazim3k.ad.AdRepository;
-import com.github.kazim3k.category.Category;
-import com.github.kazim3k.category.CategoryRepository;
-import com.github.kazim3k.user.User;
-import com.github.kazim3k.user.UserRepository;
+import com.github.kazim3k.entity.Ad;
+import com.github.kazim3k.repository.AdRepository;
+import com.github.kazim3k.entity.Category;
+import com.github.kazim3k.repository.CategoryRepository;
+import com.github.kazim3k.entity.User;
+import com.github.kazim3k.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

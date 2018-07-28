@@ -1,4 +1,4 @@
-package com.github.kazim3k.ad;
+package com.github.kazim3k.service;
 
 
 import com.github.kazim3k.dto.AdDto;

@@ -1,6 +1,7 @@
-package com.github.kazim3k.ad;
+package com.github.kazim3k.controller;
 
-import com.github.kazim3k.category.CategoryRepository;
+import com.github.kazim3k.service.AdService;
+import com.github.kazim3k.repository.CategoryRepository;
 import com.github.kazim3k.dto.AdDto;
 import com.github.kazim3k.dto.PostAdDto;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,8 @@
-package com.github.kazim3k.user;
+package com.github.kazim3k.service.impl;
 
+import com.github.kazim3k.entity.User;
+import com.github.kazim3k.repository.UserRepository;
+import com.github.kazim3k.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

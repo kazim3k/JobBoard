@@ -1,8 +1,11 @@
-package com.github.kazim3k.ad;
+package com.github.kazim3k.service.impl;
 
-import com.github.kazim3k.category.CategoryRepository;
+import com.github.kazim3k.entity.Ad;
+import com.github.kazim3k.repository.AdRepository;
+import com.github.kazim3k.repository.CategoryRepository;
 import com.github.kazim3k.dto.AdDto;
-import com.github.kazim3k.user.UserRepository;
+import com.github.kazim3k.service.AdService;
+import com.github.kazim3k.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;

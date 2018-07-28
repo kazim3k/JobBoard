@@ -1,7 +1,4 @@
-package com.github.kazim3k.ad;
-
-import com.github.kazim3k.category.Category;
-import com.github.kazim3k.user.User;
+package com.github.kazim3k.entity;
 
 import javax.persistence.*;
 

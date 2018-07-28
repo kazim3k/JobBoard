@@ -1,8 +1,5 @@
 package com.github.kazim3k.dto;
 
-import com.github.kazim3k.category.Category;
-import com.github.kazim3k.user.User;
-
 public class PostAdDto {
 
     private String header;

@@ -1,8 +1,7 @@
 package com.github.kazim3k.security;
 
-import com.github.kazim3k.security.UserDetailsImpl;
-import com.github.kazim3k.user.User;
-import com.github.kazim3k.user.UserRepository;
+import com.github.kazim3k.entity.User;
+import com.github.kazim3k.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

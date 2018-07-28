@@ -1,8 +1,9 @@
-package com.github.kazim3k.user;
+package com.github.kazim3k.controller;
 
-import com.github.kazim3k.ad.AdService;
+import com.github.kazim3k.entity.User;
+import com.github.kazim3k.service.AdService;
 import com.github.kazim3k.dto.CreateUserDto;
-import com.github.kazim3k.dto.PostAdDto;
+import com.github.kazim3k.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

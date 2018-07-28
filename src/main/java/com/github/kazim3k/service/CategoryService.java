@@ -1,7 +1,8 @@
-package com.github.kazim3k.category;
+package com.github.kazim3k.service;
 
 
 import com.github.kazim3k.dto.CategoryDto;
+import com.github.kazim3k.entity.Category;
 
 import java.util.Set;
 

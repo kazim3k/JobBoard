@@ -1,7 +1,6 @@
 package com.github.kazim3k.dto;
 
-import com.github.kazim3k.category.Category;
-import com.github.kazim3k.dto.AdNoCategoryDto;
+import com.github.kazim3k.entity.Category;
 
 import java.util.List;
 import java.util.stream.Collectors;
