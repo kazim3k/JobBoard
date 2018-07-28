@@ -6,7 +6,9 @@ import com.github.kazim3k.entity.Category;
 import com.github.kazim3k.repository.CategoryRepository;
 import com.github.kazim3k.entity.User;
 import com.github.kazim3k.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,11 +17,14 @@ public class AfterApplication implements CommandLineRunner {
     private AdRepository adRepository;
     private CategoryRepository categoryRepository;
     private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
 
-    public AfterApplication(AdRepository adRepository, CategoryRepository categoryRepository, UserRepository userRepository) {
+    @Autowired
+    public AfterApplication(AdRepository adRepository, CategoryRepository categoryRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.adRepository = adRepository;
         this.categoryRepository = categoryRepository;
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -53,7 +58,7 @@ public class AfterApplication implements CommandLineRunner {
         User user = new User();
         user.setEmail(email);
         user.setLogin(login);
-        user.setPassword(password);
+        user.setPassword(passwordEncoder.encode(password));
         return userRepository.save(user);
     }
 
