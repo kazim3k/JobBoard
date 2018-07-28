@@ -32,19 +32,25 @@ public class AfterApplication implements CommandLineRunner {
         if (adRepository.findAllBy().isEmpty() &&
                 categoryRepository.findAllBy().isEmpty()) {
             Category categoryIT = createCategory("IT");
-            Category categorymMrketing = createCategory("Makreting");
+            Category categoryMarketing = createCategory("Makreting");
             Category categoryGastronomy = createCategory("Gastronomy");
-            String content = "Lorem ipsum dolor sit amet, consectetur";
-            Ad ad = createAd("JAVA JUNIOR DEVELOPER",content,categoryIT);
-            User user = createUser("michal.kuzma1994@gmail.com","kazim3k","123");
+            Category categoryHR = createCategory("HR");
+            Category categoryDriver = createCategory("Driver");
+            Category categorySecurity = createCategory("Security");
+            Category categoryEducation = createCategory("Education");
+            Category categoryTourism = createCategory("Tourism");
+            String content = "Looking for Java developer no experience ASAP";
+            User user = createUser("micha.kuzma1994@gmaiI.com","kazim3k","123");
+            Ad ad = createAd("JAVA JUNIOR DEVELOPER",content,categoryIT,user);
         }
     }
 
-    private Ad createAd(String header, String content, Category category) {
+    private Ad createAd(String header, String content, Category category,User user) {
         Ad ad = new Ad();
         ad.setHeader(header);
         ad.setContent(content);
         ad.setCategory(category);
+        ad.setUser(user);
         return adRepository.save(ad);
     }
 

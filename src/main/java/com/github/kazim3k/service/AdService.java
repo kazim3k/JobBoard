@@ -10,5 +10,6 @@ public interface AdService {
 
     Set<AdDto> findAll();
     Set<AdDto> findAllByCategoryId(Long categoryId);
+    Set<AdDto> findAllByUserLogin(String login);
     void create(String header, String content, Long categoryId);
 }

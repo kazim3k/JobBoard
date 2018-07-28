@@ -17,13 +17,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-                .antMatchers("/user","/views/postAd").authenticated();
+                .antMatchers("/user","/postAd").authenticated();
         http.formLogin().loginPage("/login")
                 .defaultSuccessUrl("/user").permitAll();
         http.logout().logoutSuccessUrl("/").permitAll();
         http.csrf().disable();
 
-//
     }
 
     @Bean

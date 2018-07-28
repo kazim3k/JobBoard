@@ -41,6 +41,13 @@ public class AdServiceImpl implements AdService {
     }
 
     @Override
+    public Set<AdDto> findAllByUserLogin(String login) {
+        return adRepository.findAllByUserLogin(login).stream().
+                map(AdDto::new).
+                collect(Collectors.toSet());
+    }
+
+    @Override
     public void create(String header, String content, Long categoryId) {
         String login = SecurityContextHolder.getContext().getAuthentication().getName();
         Ad ad = new Ad();

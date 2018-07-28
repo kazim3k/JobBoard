@@ -1,13 +1,40 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous"/>
     <title>User Panel</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<h1>User Panel</h1>
-<li>
-    <a href="/postAd" >Add an Advertisment</a>
-</li>
+    <h1>User Panel</h1>
+
+    <li>
+     <a href="/postAd" >Add an Advertisment</a>
+    </li>
+
+    <div class="container">
+
+        <div class="row">
+            <h1>Advertisments:</h1>
+        </div>
+
+        <div th:each="ad : ${ads}" class="row">
+            <div class="col-md-2">
+                <p th:text="${ad.header}"></p>
+            </div>
+            <div class="col-md-2">
+                <p th:text="${ad.content}"></p>
+            </div>
+            <div class="col-md-2">
+                <p th:text="${ad.categoryName}"></p>
+            </div>
+            <div class="col-md-2">
+                <p th:text="${ad.userEmail}"></p>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>

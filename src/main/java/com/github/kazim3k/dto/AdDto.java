@@ -10,12 +10,17 @@ public class AdDto {
     private String categoryName;
     private String userEmail;
 
-    public AdDto(Long id, String header, String content, String categoryName,String userEmail) {
+
+    public AdDto() {
+    }
+
+    public AdDto(Long id, String header, String content, String categoryName, String userEmail) {
         this.id = id;
         this.header = header;
         this.content = content;
         this.categoryName = categoryName;
         this.userEmail = userEmail;
+
     }
 
     public AdDto (Ad ad) {
