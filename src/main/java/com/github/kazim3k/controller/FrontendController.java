@@ -33,13 +33,8 @@ public class FrontendController {
         return new ModelAndView("/admin.html");
     }
 
-    @RequestMapping("/login")
-    public String login(Model model){
 
-        return "login";
-    }
-
-    @GetMapping(value = "/")
+    @GetMapping(value = {"/", ""})
     public String index(Model model){
         Set<AdDto> adDtos = adService.findAll();
         model.addAttribute("ads", adDtos);
