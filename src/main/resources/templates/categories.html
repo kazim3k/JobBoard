@@ -17,9 +17,11 @@
         <h1>Categories:</h1>
     </div>
 
-    <div th:each="category : ${categories}" class="row">
+
+    <div th:each="category : ${categories}" class="row" th:attr="data-value=${category.name}" >
         <div class="col-md-2">
-            <p th:text="${category.name}"></p>
+            <span th:text="${category.name}" th:remove="tag"></span>
+            <a th:href="@{'/categories?name=' + ${category.name}}" class='close' aria-hidden='true'>&times;</a>
         </div>
 
     </div>
