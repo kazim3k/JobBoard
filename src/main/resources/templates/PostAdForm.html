@@ -6,11 +6,18 @@
 </head>
 <body>
 <h1>Post Ad</h1>
+<a class="navbar-brand" href="/">Job Board</a>
 <form action="#" th:action="@{/api/ads}" th:object="${dto}" method="post">
     <p>Header: <input type="text" th:field="*{header}"/></p>
     <p>Content: <input type="text" th:field="*{content}"/></p>
     <p>Category: <input type="text" th:field="*{categoryName}"/></p>
-    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+    <p>
+        <button>
+            <a href="/user"></a>
+            <input type="submit" value="Submit"/>
+        </button>
+            <input type="reset" value="Reset"/>
+    </p>
 </form>
 </body>
 </html>

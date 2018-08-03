@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Register</h1>
+<a class="navbar-brand" href="/">Job Board</a>
 <form action="#" th:action="@{/api/users}" th:object="${dto}" method="post">
     <p>Name: <input type="text" th:field="*{login}"/></p>
     <p>Email: <input type="text" th:field="*{email}"/></p>
