@@ -34,6 +34,12 @@
             <div class="col-md-2">
                 <p th:text="${ad.userEmail}"></p>
             </div>
+            <div>
+                <form th:action="@{'/api/ads/' + ${ad.id}}" th:object="${ad}" method="delete">
+                    <input type="submit" th:field="${id}">Delete</input>
+                    <button type="submit" onClick="return confirm('sure?')"/>
+                </form>
+            </div>
         </div>
 
     </div>

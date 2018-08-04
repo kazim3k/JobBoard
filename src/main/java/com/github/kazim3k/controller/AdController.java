@@ -28,6 +28,10 @@ public class AdController {
         adService.create(postAdDto.getHeader(), postAdDto.getContent(),
                 categoryRepository.findOneByName(postAdDto.getCategoryName()).getId() );
     }
+    @DeleteMapping("/{id}")
+    void deleteById (@PathVariable Long adId) {
+        adService.deleteById(adId);
+    }
 
     @GetMapping
     Set<AdDto> findAll(){

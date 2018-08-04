@@ -57,4 +57,9 @@ public class AdServiceImpl implements AdService {
         ad.setUser(userRepository.findOneByLogin(login));
         adRepository.save(ad);
     }
+
+    @Override
+    public void deleteById(Long adId) {
+        adRepository.delete(adId);
+    }
 }

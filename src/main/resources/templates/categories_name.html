@@ -1,33 +1,33 @@
-<!--<!DOCTYPE HTML>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"-->
-          <!--integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous"/>-->
-    <!--<title>User Panel</title>-->
-    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1>Categories</h1>-->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous"/>
+    <title>User Panel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Categories</h1>
 
-<!--<a class="navbar-brand" href="/">Job Board</a>-->
-
-
-<!--<div class="container">-->
-
-    <!--<div class="row">-->
-        <!--<h1>Categories:</h1>-->
-    <!--</div>-->
+<a class="navbar-brand" href="/">Job Board</a>
 
 
-    <!--<div th:each="category : ${categories}" class="row" th:attr="data-value=${category.name}" >-->
-        <!--<div class="col-md-2">-->
-            <!--<span th:text="${category.name}" th:remove="tag"></span>-->
-            <!--<a th:href="@{'/categories?name=' + ${category.name}}" class='close' aria-hidden='true'>&times;</a>-->
-        <!--</div>-->
+<div class="container">
 
-    <!--</div>-->
+    <div class="row">
+        <h1>Categories:</h1>
+    </div>
 
-<!--</div>-->
 
-<!--</body>-->
-<!--</html>-->
+    <div th:each="category : ${categories}" class="row" th:attr="data-value=${category.name}" >
+        <div class="col-md-2">
+            <span th:text="${category.name}" th:remove="tag"></span>
+            <a th:href="@{'/categories?name=' + ${category.name}}" class='close' aria-hidden='true'>&times;</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
