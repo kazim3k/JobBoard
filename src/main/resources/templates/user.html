@@ -35,9 +35,9 @@
                 <p th:text="${ad.userEmail}"></p>
             </div>
             <div>
-                <form th:action="@{'/api/ads/' + ${ad.id}}" th:object="${ad}" method="delete">
+                <form th:action="@{'/api/ads/' + ${ad.id}}" th:object="${ad}" th:method="delete">
                     <input type="submit" th:field="${id}">Delete</input>
-                    <button type="submit" onClick="return confirm('sure?')"/>
+                    <button type="submit" />
                 </form>
             </div>
         </div>

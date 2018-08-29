@@ -1,0 +1,44 @@
+body {
+    background-color: aquamarine;
+}
+
+.container {
+    margin: 50px 10%;
+    width: 80%;
+    background-color: white;
+}
+
+.navbar {
+    margin-right: 0;
+}
+
+.add {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+
+}
+
+h4 {
+    height: 5%;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+.box {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #bfd7ff;
+}
+
+.email {
+    display: none;
+}
+
+.category {
+    float:  right;
+    margin: 0 auto;
+}

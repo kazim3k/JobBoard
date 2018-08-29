@@ -21,7 +21,7 @@ public class AdServiceImpl implements AdService {
     private UserRepository userRepository;
 
     @Autowired
-    public AdServiceImpl(AdRepository adRepository, CategoryRepository categoryRepository, UserRepository userRepository, UserRepository userRepository1) {
+    public AdServiceImpl(AdRepository adRepository, CategoryRepository categoryRepository, UserRepository userRepository) {
         this.adRepository = adRepository;
         this.categoryRepository = categoryRepository;
         this.userRepository = userRepository;
@@ -48,7 +48,7 @@ public class AdServiceImpl implements AdService {
     }
 
     @Override
-    public void create(String header, String content, Long categoryId) {
+    public Long create(String header, String content, Long categoryId) {
         String login = SecurityContextHolder.getContext().getAuthentication().getName();
         Ad ad = new Ad();
         ad.setCategory(categoryRepository.findOne(categoryId));
@@ -56,6 +56,7 @@ public class AdServiceImpl implements AdService {
         ad.setContent(content);
         ad.setUser(userRepository.findOneByLogin(login));
         adRepository.save(ad);
+        return ad.getId();
     }
 
     @Override
