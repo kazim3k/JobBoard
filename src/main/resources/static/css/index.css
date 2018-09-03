@@ -18,6 +18,20 @@ body {
     padding-bottom: 10px;
 
 }
+ul {
+    width: 100%;
+}
+#login {
+    position: absolute;
+    top: auto;
+    right: 15px;
+}
+
+#signup {
+    position: absolute;
+    top: auto;
+    right: 90px;
+}
 
 h4 {
     height: 5%;
@@ -39,6 +53,6 @@ h4 {
 }
 
 .category {
-    float:  right;
+    float: right;
     margin: 0 auto;
 }
