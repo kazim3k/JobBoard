@@ -21,7 +21,7 @@ body {
 ul {
     width: 100%;
 }
-#login {
+#loging {
     position: absolute;
     top: auto;
     right: 15px;
@@ -45,7 +45,6 @@ h4 {
 .box {
     width: 60%;
     margin: 0 auto;
-    background-color: #bfd7ff;
 }
 
 .email {
@@ -56,3 +55,25 @@ h4 {
     float: right;
     margin: 0 auto;
 }
+
+.jumbotron {
+    margin: 5% 20%;
+}
+
+#login-form, #signup-form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.title {
+    margin: 0 auto;
+    width: 25%;
+    text-align: center;
+}
+
+.row-ads {
+    margin-top: 5%;
+    background-color: #bfd7ff;
+}
+
+
