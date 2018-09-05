@@ -1,3 +1,5 @@
+/*Navbar and all page*/
+
 body {
     background-color: aquamarine;
 }
@@ -12,15 +14,10 @@ body {
     margin-right: 0;
 }
 
-.add {
-    width: 90%;
-    margin: 0 auto;
-    padding-bottom: 10px;
+.jumbotron {
+    margin: 5% 20%;
+}
 
-}
-ul {
-    width: 100%;
-}
 #loging {
     position: absolute;
     top: auto;
@@ -32,6 +29,19 @@ ul {
     top: auto;
     right: 90px;
 }
+
+/*Index.html*/
+
+.add {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+
+}
+ul {
+    width: 100%;
+}
+
 
 h4 {
     height: 5%;
@@ -56,15 +66,6 @@ h4 {
     margin: 0 auto;
 }
 
-.jumbotron {
-    margin: 5% 20%;
-}
-
-#login-form, #signup-form {
-    width: 50%;
-    margin: 0 auto;
-}
-
 .title {
     margin: 0 auto;
     width: 25%;
@@ -75,5 +76,26 @@ h4 {
     margin-top: 5%;
     background-color: #bfd7ff;
 }
+
+/*Login.html*/
+
+#login-form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*SignUpForm.html*/
+#signup-form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*categories.html*/
+
+.category-href {
+    width: 30%;
+    margin: 0 auto;
+}
+
 
 

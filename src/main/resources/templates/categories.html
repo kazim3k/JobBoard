@@ -43,8 +43,8 @@
     </div>
 
 
-    <div th:each="category : ${categories}" class="row" th:attr="data-value=${category.name}" >
-            <span th:text="${category.name}" th:remove="tag"></span>
+    <div th:each="category : ${categories}" class="row category-href" th:attr="data-value=${category.name}" >
+            <span th:text="${category.name}" th:remove="tag" ></span>
             <a th:href="@{'/categories?name=' + ${category.name}}" class='close' aria-hidden='true'>
             </a>
     </div>
