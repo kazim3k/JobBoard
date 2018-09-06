@@ -63,4 +63,11 @@ public class AdServiceImpl implements AdService {
     public void deleteById(Long adId) {
         adRepository.delete(adId);
     }
+
+    @Override
+    public Set<AdDto> findAllByCategoryName(String categoryName) {
+        return adRepository.findAllByCategoryName(categoryName).stream().
+                map(AdDto::new).
+                collect(Collectors.toSet());
+    }
 }

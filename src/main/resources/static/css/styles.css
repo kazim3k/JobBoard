@@ -1,5 +1,3 @@
-/*Navbar and all page*/
-
 body {
     background-color: aquamarine;
 }
@@ -24,13 +22,18 @@ body {
     right: 15px;
 }
 
+#logout {
+    position: absolute;
+    top: auto;
+    right: 15px;
+    display: none;
+}
+
 #signup {
     position: absolute;
     top: auto;
     right: 90px;
 }
-
-/*Index.html*/
 
 .add {
     width: 90%;
@@ -51,6 +54,9 @@ h4 {
     padding-top: 10px;
     padding-bottom: 25px;
 }
+
+
+
 
 .box {
     width: 60%;
@@ -77,20 +83,26 @@ h4 {
     background-color: #bfd7ff;
 }
 
-/*Login.html*/
+
+
+
 
 #login-form {
     width: 50%;
     margin: 0 auto;
 }
 
-/*SignUpForm.html*/
+
+
+
+
+
 #signup-form {
     width: 50%;
     margin: 0 auto;
 }
 
-/*categories.html*/
+
 
 .category-href {
     width: 30%;

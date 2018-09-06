@@ -43,6 +43,11 @@ public class AdController {
         return adService.findAllByCategoryId(categoryId);
     }
 
+    @GetMapping("/{categoryName}")
+    Set<AdDto> findAllByCategoryName(@PathVariable String categoryName){
+        return adService.findAllByCategoryName(categoryName);
+    }
+
 
 }
 

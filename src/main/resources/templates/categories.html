@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>User Panel</title>
+    <title>Categories</title>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <script src="js/script.js"/>
 </head>
 <body>
 
@@ -22,18 +23,19 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/user">Profile <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/categories">Categories</a>
             </li>
             <li class="nav-item " id="signup">
-                <a class="nav-link disabled" href="/signup">Sign up <i class="fas fa-user-plus"></i></a>
+                <a class="nav-link active" href="/signup">Sign up <i class="fas fa-user-plus"></i></a>
             </li>
             <li class="nav-item" id="loging">
-                <a class="nav-link disabled" href="/login">Login <i class="fas fa-sign-in-alt"></i></a>
+                <a class="nav-link active" href="/login">Login <i class="fas fa-sign-in-alt"></i></a>
             </li>
         </ul>
     </div>
 </nav>
+
 
 
 <div class="jumbotron">
@@ -43,11 +45,14 @@
     </div>
 
 
-    <div th:each="category : ${categories}" class="row category-href" th:attr="data-value=${category.name}" >
-            <span th:text="${category.name}" th:remove="tag" ></span>
-            <a th:href="@{'/categories?name=' + ${category.name}}" class='close' aria-hidden='true'>
-            </a>
-    </div>
+    <!--<div th:each="category : ${categories}" class="row category-href" th:attr="data-value=${category.name}" >-->
+            <!--<span th:text="${category.name}" th:remove="tag" th:href="@{'/categories?name=' + ${category.name}}" >-->
+            <!--</span>-->
+
+        <div th:each="category : ${categories}" class="row category-href" th:attr="data-value=${category.name}" >
+            <a th:text="${category.name}" th:href="@{'/categories/' + ${category.name}}"></a>
+
+        </div>
 
 </div>
 

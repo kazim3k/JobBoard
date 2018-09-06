@@ -1,12 +1,13 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Register</title>
     <meta charset="UTF-8"/>
+    <title>Categories name</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <script src="js/script.js"/>
+
 </head>
 <body>
 
@@ -35,17 +36,21 @@
     </div>
 </nav>
 
+<div class="container">
+    <h2 class="title">Adverts</h2>
+    <div class="box">
+        <div th:each="ad : ${ads}" class="row row-ads">
+            <h4 th:text="${ad.header}"></h4>
 
-<div class="jumbotron">
-    <h4>Create account</h4>
+            <p th:text="${ad.categoryName}" class="category"></p>
 
-    <form id="signup-form" action="#" th:action="@{/api/users}" th:object="${dto}" method="post">
-        <p>Name: <input type="text" th:field="*{login}"/></p>
-        <p>Email: <input type="text" th:field="*{email}"/></p>
-        <p>Password: <input type="password" th:field="*{password}"/></p>
-        <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
-    </form>
+            <p th:text="${ad.content}" class="add"></p>
+
+            <p th:text="${ad.userEmail}" class="email"></p>
+        </div>
+    </div>
 </div>
+
 
 </body>
 </html>

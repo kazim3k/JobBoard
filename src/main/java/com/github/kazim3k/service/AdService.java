@@ -12,4 +12,6 @@ public interface AdService {
     Set<AdDto> findAllByUserLogin(String login);
     Long create(String header, String content, Long categoryId);
     void deleteById(Long adId);
+
+    Set<AdDto> findAllByCategoryName(String categoryName);
 }

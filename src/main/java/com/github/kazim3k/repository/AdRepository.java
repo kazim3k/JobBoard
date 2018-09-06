@@ -14,6 +14,7 @@ public interface AdRepository extends CrudRepository<Ad, Long> {
     Set<Ad> findAllByCategoryId(Long categoryId);
     Set<Ad> findAllByUserId(Long userId);
     Set<Ad> findAllByUserLogin(String login);
+    Set<Ad> findAllByCategoryName(String name);
 
 
 }
